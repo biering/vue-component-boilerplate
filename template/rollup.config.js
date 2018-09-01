@@ -1,0 +1,53 @@
+import alias from 'rollup-plugin-strict-alias'
+import vue from 'rollup-plugin-vue'
+import babel from 'rollup-plugin-babel'
+import nodeResolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs'
+import nodeGlobals from 'rollup-plugin-node-globals'
+import uglify from 'rollup-plugin-uglify'
+import { minify } from 'uglify-js'
+import pkg from './package.json'
+
+const plugins = [
+  alias({
+    vue: 'node_modules/vue/dist/vue.common.js'
+  }),
+  vue({
+    css: './dist/bundle.css'
+  }),
+  babel({
+    exclude: 'node_modules/**'
+  }),
+  nodeResolve({
+    jsnext: true,
+    main: true,
+    browser: true
+  }),
+  commonjs(),
+  nodeGlobals()
+]
+
+const config = {
+  input: './src/main.js',
+  output: {
+    name: pkg.name,
+    file: './dist/bundle.js',
+    format: 'umd',
+    sourcemap: true
+  },
+  plugins: plugins
+}
+
+const isProduction = process.env.NODE_ENV === `production`
+const isDevelopment = process.env.NODE_ENV === `development`
+
+if (isProduction) {
+  config.sourcemap = false
+  config.plugins.push(uglify({}, minify))
+}
+
+if (isDevelopment) {
+
+}
+
+export default config
