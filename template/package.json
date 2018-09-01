@@ -1,7 +1,7 @@
 {
-  "name": "name",
-  "description": "description",
-  "author": "author",
+  "name": "{{ name }}",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
   "main": "dist/bundle.js",
   "private": true,
   "scripts": {
