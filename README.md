@@ -1,6 +1,6 @@
 # vue-lib-boilerplate
 
-> A simple and light-weight boilerplate for vue packages w/ Rollup, ES6+, Vue2, Vue-CLI
+> A simple and light-weight boilerplate for vue libraries w/ Rollup, ES7+, Vue v2 and Vue-CLI
 
 ## Usage
 
@@ -9,11 +9,20 @@ $ npm install -g vue-cli
 $ vue init chryb/vue-lib-boilerplate lib-name
 $ cd lib-name
 $ npm install
+```
 
+### Development
 
-# Development
+The library boilerplate is optimized for rapid development and supports hot-reloading. Too start development use:
+
+```bash
 $ npm run dev
+```
 
-# Build
+### Production
+
+When you build the library for production it gets minimized. To build it run:
+
+```bash
 $ npm run build
 ```
