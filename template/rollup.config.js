@@ -4,8 +4,10 @@ import babel from 'rollup-plugin-babel'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import nodeGlobals from 'rollup-plugin-node-globals'
-import uglify from 'rollup-plugin-uglify'
-import { minify } from 'uglify-js'
+import minify from 'rollup-plugin-babel-minify'
+import livereload from 'rollup-plugin-livereload'
+import serve from 'rollup-plugin-serve'
+
 import pkg from './package.json'
 
 const plugins = [
@@ -43,7 +45,7 @@ const isDevelopment = process.env.NODE_ENV === `development`
 
 if (isProduction) {
   config.sourcemap = false
-  config.plugins.push(uglify({}, minify))
+  config.plugins.push(minify({}))
 }
 
 if (isDevelopment) {
