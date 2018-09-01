@@ -47,7 +47,12 @@ if (isProduction) {
 }
 
 if (isDevelopment) {
-  console.log('Reload the page to see changes')
+  config.plugins.push(livereload())
+  config.plugins.push(serve({
+    contentBase: '.',
+    port: 8080,
+    open: true
+  }))
 }
 
 export default config
