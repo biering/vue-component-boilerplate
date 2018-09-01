@@ -30,7 +30,7 @@ $ npm run build
 ## Dependencies
 
 |Package|Version|
-|---|---|
+|:---:|:---:|
 |`@babel/core`|7.0.0|
 |`@babel/preset-env`|7.0.0|
 |`cross-env`|5.2.0|
