@@ -6,8 +6,8 @@
 
 ```bash
 $ npm install -g vue-cli
-$ vue init chryb/vue-lib-boilerplate project-name
-$ cd project-name
+$ vue init chryb/vue-lib-boilerplate lib-name
+$ cd lib-name
 $ npm install
 
 
