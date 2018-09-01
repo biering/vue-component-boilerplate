@@ -47,7 +47,7 @@ if (isProduction) {
 }
 
 if (isDevelopment) {
-
+  console.log('Reload the page to see changes')
 }
 
 export default config
