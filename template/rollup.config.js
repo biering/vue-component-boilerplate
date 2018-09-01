@@ -44,7 +44,7 @@ const isProduction = process.env.NODE_ENV === `production`
 const isDevelopment = process.env.NODE_ENV === `development`
 
 if (isProduction) {
-  config.sourcemap = false
+  config.output.sourcemap = false
   config.plugins.push(minify({}))
 }
 
