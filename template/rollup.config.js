@@ -7,6 +7,10 @@ import nodeGlobals from 'rollup-plugin-node-globals'
 import minify from 'rollup-plugin-babel-minify'
 import livereload from 'rollup-plugin-livereload'
 import serve from 'rollup-plugin-serve'
+import { eslint } from 'rollup-plugin-eslint'
+import bundleSize from 'rollup-plugin-filesize'
+
+const extensions = ['.js', '.vue']
 
 import pkg from './package.json'
 
@@ -14,8 +18,14 @@ const plugins = [
   alias({
     vue: 'node_modules/vue/dist/vue.common.js'
   }),
+  eslint({
+    extensions,
+    exclude: ['**//*.json'],
+    cache: true,
+    throwOnError: true
+  }),
   vue({
-    css: './dist/bundle.css'
+    css: true
   }),
   babel({
     exclude: 'node_modules/**'
