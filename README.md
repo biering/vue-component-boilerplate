@@ -1,12 +1,12 @@
-# vue-lib-boilerplate
+# vue-component-boilerplate
 
-> A simple and light-weight boilerplate for vue libraries w/ Rollup, ES7+, Vue v2 and Vue-CLI
+> An ever-evolving boilerplate to create Vue light-weight components w/ ES6+, Vue-CLI 3, Rollup, Live-Reloading, ESLint
 
 ## Usage
 
 ```bash
 $ npm install -g vue-cli
-$ vue init chryb/vue-lib-boilerplate lib-name
+$ vue init chryb/vue-component-boilerplate lib-name
 $ cd lib-name
 $ npm install
 ```
@@ -35,4 +35,5 @@ $ npm run build
 |`@babel/preset-env`|7.0.0|
 |`cross-env`|5.2.0|
 |`rollup`|0.65.0|
+|`eslint`|5.5.0|
 |`vue`|2.5.17|
