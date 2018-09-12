@@ -10,14 +10,15 @@ import serve from 'rollup-plugin-serve'
 import { eslint } from 'rollup-plugin-eslint'
 import bundleSize from 'rollup-plugin-filesize'
 
-const extensions = ['.js', '.vue']
-
 import pkg from './package.json'
+
+const extensions = ['.js', '.vue']
 
 const plugins = [
   alias({
     vue: 'node_modules/vue/dist/vue.common.js'
   }),
+  bundleSize(),
   eslint({
     extensions,
     exclude: ['**//*.json'],
@@ -44,8 +45,8 @@ const config = {
   output: {
     name: pkg.name,
     file: './dist/bundle.js',
-    format: 'umd',
-    sourcemap: true
+    format: 'umd'
+    // sourcemap: true
   },
   plugins: plugins
 }
